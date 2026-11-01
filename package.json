@@ -1,0 +1,40 @@
+{
+  "name": "stephen-clark-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stephen Clark’s portfolio, built with React, TypeScript, Vite, and TanStack.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --configLoader runner --host 127.0.0.1 --port 4173",
+    "build": "tsc --noEmit && vite build --configLoader runner && node scripts/verify-build.mjs",
+    "preview": "vite preview --configLoader runner --host 127.0.0.1 --port 4173",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --deny-warnings",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "test:e2e": "npm run build && playwright test",
+    "check": "npm run format:check && npm run lint && npm run build"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@tanstack/react-router": "^1.170.46",
+    "@tanstack/react-store": "^0.11.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
